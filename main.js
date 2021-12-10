@@ -24,9 +24,15 @@ function countDown() {
     // console.log(minutes);
     // console.log(seconds);
     days_holder.innerText = days;
-    hours_holder.innerText = hours;
-    minutes_holder.innerText = minutes;
-    seconds_holder.innerText = seconds;
+    hours_holder.innerText = formatTime(hours);
+    minutes_holder.innerText = formatTime(minutes);
+    seconds_holder.innerText = formatTime(seconds);
 }
+
+function formatTime(time) {
+    return time < 10 ? `0${time}` : time;
+}
+
+countDown();
 
 setInterval(countDown, 1000);
